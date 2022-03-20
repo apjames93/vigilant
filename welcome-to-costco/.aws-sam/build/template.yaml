@@ -1,0 +1,45 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: 'welcome-to-costco
+
+  Sample SAM Template for welcome-to-costco
+
+  '
+Globals:
+  Function:
+    Timeout: 5
+Resources:
+  MyLayer:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      ContentUri: MyLayer
+      CompatibleRuntimes:
+      - go1.x
+    Metadata:
+      BuildMethod: makefile
+      SamResourceId: MyLayer
+  Migrations:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: Migrations
+      Handler: migrations
+      Runtime: go1.x
+      Architectures:
+      - x86_64
+      Tracing: Active
+      Events:
+        CatchAll:
+          Type: Api
+          Properties:
+            Path: /migrations
+            Method: GET
+      Environment:
+        Variables:
+          PG_HOST: ${PG_HOST}
+          PG_PORT: ${PG_PORT}
+          PG_USER: ${PG_USER}
+          PG_PASSWORD: ${PG_PASSWORD}
+          PG_DB_NAME: ${PG_DB_NAME}
+          PG_SSL_MODE: ${PG_SSL_MODE}
+    Metadata:
+      SamResourceId: Migrations
