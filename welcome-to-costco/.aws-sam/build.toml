@@ -11,11 +11,3 @@ packagetype = "Zip"
 functions = ["Migrations"]
 
 [layer_build_definitions]
-[layer_build_definitions.5fae05c4-7b8f-4b00-817a-9487ac0495f0]
-layer_name = "MyLayer"
-codeuri = "/Users/alexanderjames/code/vigilant/welcome-to-costco"
-build_method = "makefile"
-compatible_runtimes = ["go1.x"]
-architecture = "x86_64"
-manifest_hash = ""
-layer = "MyLayer"

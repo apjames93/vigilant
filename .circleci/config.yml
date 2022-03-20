@@ -20,7 +20,8 @@ jobs:
             sudo apt-get update
             sudo apt-get install python3-pip -y
             sudo pip install aws-sam-cli
-            cd welcome-to-costco && sam deploy
+            
+            cd welcome-to-costco && sam build && sam deploy -no-fail-on-empty-changeset
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
