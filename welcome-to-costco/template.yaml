@@ -36,12 +36,12 @@ Resources:
             Method: GET
       Environment: # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
         Variables:
-          PG_HOST: ${PG_HOST}
-          PG_PORT: ${PG_PORT}
-          PG_USER: ${PG_USER}
-          PG_PASSWORD: ${PG_PASSWORD}
-          PG_DB_NAME: ${PG_DB_NAME}
-          PG_SSL_MODE: ${PG_SSL_MODE}
+          PG_HOST: !Sub "${PG_HOST}"
+          PG_PORT: !Sub "${PG_PORT}"
+          PG_USER: !Sub "${PG_USER}"
+          PG_PASSWORD: !Sub "${PG_PASSWORD}"
+          PG_DB_NAME: !Sub "${PG_DB_NAME}"
+          PG_SSL_MODE: !Sub "${PG_SSL_MODE}"
       # Layers:
       #   - !Ref MyLayer
 
