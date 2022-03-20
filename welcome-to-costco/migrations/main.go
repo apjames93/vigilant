@@ -29,7 +29,7 @@ func handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyRespo
 	)
 
 	log.Println("!!!!!!!!poop!!!!!!!!!!!")
-	log.Println("!!!!!!!!!!!!!!!!!!!")
+	log.Println("!!!!!!!!!!poop!!!!!!!!!")
 	log.Println("!!!!!!!!!!!!!!!!!!!")
 	log.Println(dsn)
 	log.Println("!!!!!!!!!!!!!!!!!!!")
