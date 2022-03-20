@@ -17,10 +17,10 @@ jobs:
       - run:
           name: "Say hello"
           command: |
-            apt-get update
-            apt-get install python3-pip -y
-            pip install aws-sam-cli
-            cd welcome-to-costco && sam deploy 
+            sudo apt-get update
+            sudo apt-get install python3-pip -y
+            sudo pip install aws-sam-cli
+            sudo cd welcome-to-costco && sam deploy
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
