@@ -28,12 +28,8 @@ func handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyRespo
 		os.Getenv("PG_SSL_MODE"),
 	)
 
-	log.Println("!!!!!!!!poop!!!!!!!!!!!")
-	log.Println("!!!!!!!!!!poop!!!!!!!!!")
-	log.Println("!!!!!!!!!!!!!!!!!!!")
+	log.Println("!!!!!!!!poop!!!!!!!")
 	log.Println(dsn)
-	log.Println("!!!!!!!!!!!!!!!!!!!")
-	log.Println("!!!!!!!!!!!!!!!!!!!")
 	log.Println("!!!!!!!!!!!!!!!!!!!")
 
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
