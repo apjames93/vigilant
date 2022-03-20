@@ -16,7 +16,11 @@ jobs:
       - checkout
       - run:
           name: "Say hello"
-          command: "echo Hello, World!"
+          command: |
+            apt-get update
+            apt-get install python3-pip -y
+            pip install aws-sam-cli
+            cd welcome-to-costco && sam deploy 
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
